@@ -1,0 +1,175 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: rgb(255, 128, 43);
+}
+
+#general-container {
+    height: 100vh;
+    width: 100%; 
+    display: grid;
+    grid-template-rows: 1fr 7fr;
+    grid-template-areas: "h" "c";
+}
+
+#title {
+    width: 100%;
+    text-align: center;
+    font-size: 500%;
+    margin-top: 2%;
+    color: rgb(47, 0, 53);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#header {
+    grid-area: h;
+}
+
+#container {
+    grid-area: c;
+    display: grid;
+    grid-template-rows: 1fr 6fr 0.5fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+    ". ti ."
+    ". bo ."
+    ". sc ."
+    ". . .";
+}
+
+#board {
+    grid-area: bo;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    position: relative;
+    
+}
+
+#scores{
+    grid-area: sc;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    height: 100%;
+}
+
+.row {
+    height: 100%;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.col{
+    background-color: #aaa;
+    border: 2px solid black;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+}
+
+.inboard{
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto; 
+}
+
+.\inboard:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+.\31{
+    width: 40%;
+    background-color: red;
+    border-radius: 50%;
+    max-height: 90%;
+}
+.\32{
+    width: 40%;
+    background-color: blue;
+    border-radius: 50%;
+    max-height: 90%;
+}
+
+.c{
+    width: 20%;
+    background-color: gold;
+    border-radius: 50%;
+    max-height: 90%;
+}
+
+.w{
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+}
+
+.score-text {
+    font-size: xx-large;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#player1-score {
+    margin-left: 5%;
+}
+
+#player2-score {
+    text-align: right;
+    margin-right: 5%;
+}
+
+#setUp {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    grid-area: bo;
+    height: auto;
+    width: 75%;
+    background-color: rgb(0, 195, 255);
+    border-radius: 10px;
+}
+
+#timer {
+    grid-area: ti;
+    text-align: center;
+}
+
+#new-game {
+    text-align: center;
+    width: auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+p {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#start {
+    display: block;
+    margin: 2% auto;
+    font-size: larger;
+    background-color: greenyellow;
+}
+
+#timer{
+    font-size: 400%;
+    color: rgb(16, 136, 0);
+}
+
+#setUp-content {
+    position: relative;
+    left: 10%;
+
+}

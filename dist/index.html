@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id = "general-container">
+        <div id = "header">
+            <h1 id = "title">Gold Rush</h1>
+        </div>
+        <div id = "container">
+            <div id = "timer"></div>
+            <div id = "board">
+                <div id = setUp>
+                    <h1 id = "new-game">New Game</h1>
+                    <div id = "setUp-content">
+                        <label for= "player-1-input">Name (player 1):</label>
+                        <input id = "player-1-input" type = "text">
+                        <label for = "player-2-input" id= "input-2-label">Name (player 2):</label>
+                        <input id = "player-2-input" type = "text">
+    
+                        <p id = "board-size-text">Board size: </p>
+                        <label for = "small">Small (10 x 10)</label>
+                        <input type = "radio" name = "size" value = "small">
+                        <label for = "medium">Medium (20 x 20)</label>
+                        <input type = "radio" name = "size" value = "medium" checked>
+                        <label for = "large">Large (30 x 30)</label>
+                        <input type = "radio" name = "size" value = "large">
+                        <label for = "X-large">X-Large (40 x 40)</label>
+                        <input type = "radio" name = "size" value = "X-large">
+    
+                        <p id = "time-text">Time limit: </p>
+                        <label for = "no-time">No time limit (10 x 10)</label>
+                        <input type = "radio" name = "time" value = "no-time">
+                        <label for = "1min">1 minute</label>
+                        <input type = "radio" name = "time" value = "1min">
+                        <label for = "30sec">30 seconds</label>
+                        <input type = "radio" name = "time" value = "30sec" checked>
+                        <label for = "15sec">15 seconds</label>
+                        <input type = "radio" name = "time" value = "15sec">
+                    </div>
+                    <button id = "start">Start Game</button>
+                </div>
+            </div>
+            <div id = "scores">
+                <h3 class = "score-text" id = "player1-score"></h3>
+                <h3 class = "score-text" id = "player2-score"></h3>
+            </div>
+        </div>
+    </div>
+
+    <script id = "board-template" type = "text/x-handlebars-template">
+            {{#each board}}
+                <div class = "row" id = "row-{{@index}}">
+                    {{#each this}}
+                        <div class = "col c{{@index}}">
+                            <div class = "{{this}} inboard"></div>
+                        </div>
+                    {{/each}}
+                </div>
+            {{/each}}
+    </script>
+
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src = "Matrix.js"></script>
+    <script src = "GoldRush.js"></script>
+    <script src = "Renderer.js"></script>
+    <script src = "main.js"></script>
+</body>
+</html>
